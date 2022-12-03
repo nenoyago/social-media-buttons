@@ -1,0 +1,130 @@
+:root {
+  --shape: #fff;
+  --light: #d7e1ec;
+  --facebook: #3b5999;
+  --twitter: #46c1f6;
+  --instagram: #e1306c;
+  --github: #333;
+  --youtube: #de463b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  background: linear-gradient(315deg, var(--shape), var(--light));
+}
+
+.wrapper {
+  display: inline-flex;
+}
+
+.wrapper .icon {
+  margin: 0 20px;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon span {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: block;
+  background-color: var(--shape);
+  text-align: center;
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease-in-out;
+}
+
+.wrapper .icon span i {
+  font-size: 25px;
+  line-height: 60px;
+}
+
+.wrapper .icon:hover span {
+  color: var(--shape);
+}
+
+.wrapper .icon .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 20px;
+  padding: 10px 18px;
+  border-radius: 25px;
+  background-color: var(--shape);
+  color: var(--shape);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -70px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.wrapper .icon .tooltip::before {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: var(--shape);
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon .tooltip span,
+.wrapper .icon .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.4);
+}
+
+.wrapper .facebook:hover span,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background-color: var(--facebook);
+}
+
+.wrapper .twitter:hover span,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  background-color: var(--twitter);
+}
+
+.wrapper .instagram:hover span,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background-color: var(--instagram);
+}
+
+.wrapper .github:hover span,
+.wrapper .github:hover .tooltip,
+.wrapper .github:hover .tooltip::before {
+  background-color: var(--github);
+}
+
+.wrapper .youtube:hover span,
+.wrapper .youtube:hover .tooltip,
+.wrapper .youtube:hover .tooltip::before {
+  background-color: var(--youtube);
+}
